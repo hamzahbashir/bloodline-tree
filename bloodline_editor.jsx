@@ -6,182 +6,701 @@ const ADMIN_PASSWORD = "bloodline-admin-2026"; // change this before deploying
 // ─── INITIAL DATA ───────────────────────────────────────────────────
 const INITIAL_TREES = [
   {
-    id: "t1", name: "Josh Kariles", status: "inactive", children: [
-      { id: "t1-1", name: "Brandon Bol", status: "inactive", children: [
-        { id: "t1-1-1", name: "Julian Chien", status: "inactive", children: [
-          { id: "t1-1-1-1", name: "Shloak", status: "inactive", children: [
-            { id: "t1-1-1-1-1", name: "Dev A", status: "active", children: [
-              { id: "t1-1-1-1-1-1", name: "Yoosung", status: "inactive", children: [] },
-              { id: "t1-1-1-1-1-2", name: "Simon Cha", status: "active", children: [] }
-            ] },
-            { id: "t1-1-1-1-2", name: "Ethan Cristall", status: "inactive", children: [
-              { id: "t1-1-1-1-2-1", name: "Drew Sansig", status: "pledge", children: [] }
-            ] }
-          ] },
-          { id: "t1-1-1-2", name: "Adarsh Venkat", status: "inactive", children: [
-            { id: "t1-1-1-2-1", name: "Neev Mandot", status: "bloodline-head", children: [
-              { id: "n1", name: "Wonsang", status: "inactive", children: [] },
-              { id: "n2", name: "Mihail", status: "active", children: [] },
-              { id: "n3", name: "Henry Conlin", status: "inactive", children: [] },
-              { id: "n4", name: "Nizar Farsakh", status: "active", children: [] }
-            ] }
-          ] },
-          { id: "t1-1-1-3", name: "Avi Libman", status: "inactive", children: [] },
-          { id: "t1-1-1-4", name: "Dustin", status: "inactive", children: [] }
-        ] }
-      ] },
-      { id: "t1-2", name: "Rodrigo", status: "inactive", children: [
-        { id: "t1-2-1", name: "Josh Lee", status: "inactive", children: [
-          { id: "t1-2-1-1", name: "William Skaug", status: "inactive", children: [] }
-        ] },
-        { id: "t1-2-2", name: "Pedro Sanson", status: "inactive", children: [
-          { id: "t1-2-2-1", name: "Rajit", status: "inactive", children: [
-            { id: "t1-2-2-1-1", name: "Arya Bastani", status: "inactive", children: [
-              { id: "t1-2-2-1-1-1", name: "Shaya Amir", status: "active", children: [] }
-            ] }
-          ] }
-        ] }
-      ] }
+    "id": "t1",
+    "name": "Josh Kariles",
+    "status": "inactive",
+    "children": [
+      {
+        "id": "t1-1",
+        "name": "Brandon Bol",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t1-1-1",
+            "name": "Julian Chien",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t1-1-1-1",
+                "name": "Shloak",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t1-1-1-1-1",
+                    "name": "Dev Ahluwalia",
+                    "status": "inactive",
+                    "children": [
+                      {
+                        "id": "t1-1-1-1-1-1",
+                        "name": "Yoosung Jung",
+                        "status": "active",
+                        "children": [
+                          {
+                            "id": "node-1000",
+                            "name": "Ethan Cristall",
+                            "status": "active",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "t1-1-1-1-1-2",
+                        "name": "Simon Cha",
+                        "status": "inactive",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "t1-1-1-2",
+                "name": "Adarsh Venkat",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t1-1-1-2-1",
+                    "name": "Neev Mandot",
+                    "status": "inactive",
+                    "children": [
+                      {
+                        "id": "n1",
+                        "name": "Wonsang",
+                        "status": "inactive",
+                        "children": []
+                      },
+                      {
+                        "id": "n2",
+                        "name": "Mihail",
+                        "status": "bloodline-head",
+                        "children": [
+                          {
+                            "id": "node-1002",
+                            "name": "Nizar Farsakh",
+                            "status": "active",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "n3",
+                        "name": "Henry Conlin",
+                        "status": "active",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "t1-1-1-3",
+                "name": "Avi Libman",
+                "status": "inactive",
+                "children": []
+              },
+              {
+                "id": "t1-1-1-4",
+                "name": "Dustin Vu",
+                "status": "inactive",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t1-2",
+        "name": "Rodrigo",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t1-2-1",
+            "name": "Josh Lee",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t1-2-1-1",
+                "name": "William Skaug",
+                "status": "inactive",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t1-2-2",
+            "name": "Pedro Sanson",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t1-2-2-1",
+                "name": "Rajit Agarwal",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t1-2-2-1-1",
+                    "name": "Arya Bastani",
+                    "status": "inactive",
+                    "children": [
+                      {
+                        "id": "t1-2-2-1-1-1",
+                        "name": "Shaya Amir",
+                        "status": "inactive",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
-    id: "t2", name: "Andy Arnold", status: "inactive", children: [
-      { id: "t2-1", name: "Neziah Nez", status: "inactive", children: [
-        { id: "t2-1-1", name: "Nick Spadone", status: "inactive", children: [
-          { id: "t2-1-1-1", name: "Armaan", status: "active", children: [] },
-          { id: "t2-1-1-2", name: "Cameron K", status: "active", children: [] },
-          { id: "t2-1-1-3", name: "James D", status: "active", children: [] }
-        ] },
-        { id: "t2-1-2", name: "Colin Snyder", status: "inactive", children: [
-          { id: "t2-1-2-1", name: "Jason Lee", status: "active", children: [
-            { id: "t2-1-2-1-1", name: "Leo", status: "pledge", children: [] }
-          ] }
-        ] }
-      ] },
-      { id: "t2-2", name: "Jack Simpson", status: "inactive", children: [
-        { id: "t2-2-1", name: "Keaton Elvins", status: "inactive", children: [
-          { id: "t2-2-1-1", name: "Varun Shah", status: "bloodline-head", children: [
-            { id: "t2-2-1-1-1", name: "Elias Rabine", status: "active", children: [] }
-          ] }
-        ] }
-      ] }
+    "id": "t2",
+    "name": "Andy Arnold",
+    "status": "inactive",
+    "children": [
+      {
+        "id": "t2-1",
+        "name": "Neziah Nez",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t2-1-1",
+            "name": "Nick Spadone",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t2-1-1-1",
+                "name": "Armaan Ismail",
+                "status": "active",
+                "children": []
+              },
+              {
+                "id": "t2-1-1-2",
+                "name": "Cameron Kalantar",
+                "status": "active",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t2-1-2",
+            "name": "Colin Snyder",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t2-1-2-1",
+                "name": "Jason Lee",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t2-1-2-1-1",
+                    "name": "Leo",
+                    "status": "pledge",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t2-2",
+        "name": "Jack Simpson",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t2-2-1",
+            "name": "Keaton Elvins",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t2-2-1-1",
+                "name": "Varun Shah",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t2-2-1-1-1",
+                    "name": "Elias Rabine",
+                    "status": "active",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
-    id: "t3", name: "Chad Clay", status: "inactive", children: [
-      { id: "t3-1", name: "Julian Faust", status: "inactive", children: [
-        { id: "t3-1-1", name: "Desi", status: "inactive", children: [
-          { id: "t3-1-1-1", name: "Dylan A", status: "inactive", children: [
-            { id: "t3-1-1-1-1", name: "Jaxon", status: "active", children: [
-              { id: "t3-1-1-1-1-1", name: "Simon K", status: "pledge", children: [] }
-            ] }
-          ] }
-        ] }
-      ] },
-      { id: "t3-2", name: "Aadit", status: "active", children: [
-        { id: "t3-2-1", name: "Nitish", status: "inactive", children: [
-          { id: "t3-2-1-1", name: "Rishab", status: "inactive", children: [
-            { id: "t3-2-1-1-1", name: "Neil Desh", status: "active", children: [
-              { id: "t3-2-1-1-1-1", name: "Kurtis", status: "active", children: [] },
-              { id: "t3-2-1-1-1-2", name: "Adi K", status: "active", children: [] }
-            ] },
-            { id: "t3-2-1-1-2", name: "Kirill Lee", status: "active", children: [] }
-          ] },
-          { id: "t3-2-1-2", name: "Alejandro M", status: "inactive", children: [] }
-        ] },
-        { id: "t3-2-2", name: "Yahir", status: "inactive", children: [] }
-      ] },
-      { id: "t3-3", name: "Burns", status: "inactive", children: [
-        { id: "t3-3-1", name: "Shawn H", status: "inactive", children: [
-          { id: "t3-3-1-1", name: "Yash Hande", status: "bloodline-head", children: [
-            { id: "t3-3-1-1-1", name: "Nikhil R", status: "active", children: [] },
-            { id: "t3-3-1-1-2", name: "Manav", status: "active", children: [
-              { id: "t3-3-1-1-2-1", name: "Jayden", status: "pledge", children: [] }
-            ] },
-            { id: "t3-3-1-1-3", name: "Tyson Gan", status: "active", children: [] }
-          ] },
-          { id: "t3-3-1-2", name: "Conor", status: "inactive", children: [
-            { id: "t3-3-1-2-1", name: "Sean Chung", status: "active", children: [] },
-            { id: "t3-3-1-2-2", name: "Cade Flores", status: "active", children: [] }
-          ] }
-        ] }
-      ] }
+    "id": "t3",
+    "name": "Chad Clay",
+    "status": "inactive",
+    "children": [
+      {
+        "id": "t3-1",
+        "name": "Julian Faust",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t3-1-1",
+            "name": "Desi",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t3-1-1-1",
+                "name": "Dylan A",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t3-1-1-1-1",
+                    "name": "Jaxon",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t3-1-1-1-1-1",
+                        "name": "Simon K",
+                        "status": "pledge",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t3-2",
+        "name": "Aadit",
+        "status": "active",
+        "children": [
+          {
+            "id": "t3-2-1",
+            "name": "Nitish",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t3-2-1-1",
+                "name": "Rishab",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t3-2-1-1-1",
+                    "name": "Neil Desh",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t3-2-1-1-1-1",
+                        "name": "Kurtis",
+                        "status": "active",
+                        "children": []
+                      },
+                      {
+                        "id": "t3-2-1-1-1-2",
+                        "name": "Adi K",
+                        "status": "active",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "t3-2-1-1-2",
+                    "name": "Kirill Lee",
+                    "status": "active",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "t3-2-1-2",
+                "name": "Alejandro M",
+                "status": "inactive",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t3-2-2",
+            "name": "Yahir",
+            "status": "inactive",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "t3-3",
+        "name": "Burns",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t3-3-1",
+            "name": "Shawn H",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t3-3-1-1",
+                "name": "Yash Hande",
+                "status": "bloodline-head",
+                "children": [
+                  {
+                    "id": "t3-3-1-1-1",
+                    "name": "Nikhil R",
+                    "status": "active",
+                    "children": []
+                  },
+                  {
+                    "id": "t3-3-1-1-2",
+                    "name": "Manav",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t3-3-1-1-2-1",
+                        "name": "Jayden",
+                        "status": "pledge",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "t3-3-1-1-3",
+                    "name": "Tyson Gan",
+                    "status": "active",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "t3-3-1-2",
+                "name": "Conor",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t3-3-1-2-1",
+                    "name": "Sean Chung",
+                    "status": "active",
+                    "children": []
+                  },
+                  {
+                    "id": "t3-3-1-2-2",
+                    "name": "Cade Flores",
+                    "status": "active",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
-    id: "t4", name: "Calvin Grewal", status: "inactive", children: [
-      { id: "t4-1", name: "Peter Choi", status: "bloodline-head", children: [
-        { id: "t4-1-1", name: "Matthew Ho", status: "inactive", children: [
-          { id: "t4-1-1-1", name: "Zachary", status: "pledge", children: [] }
-        ] },
-        { id: "t4-1-2", name: "Hamzah", status: "active", children: [
-          { id: "t4-1-2-1", name: "Nico", status: "pledge", children: [] },
-          { id: "t4-1-2-2", name: "Madav", status: "pledge", children: [] }
-        ] },
-        { id: "t4-1-3", name: "Joseph", status: "active", children: [
-          { id: "t4-1-3-1", name: "Matthew P", status: "pledge", children: [] },
-          { id: "t4-1-3-2", name: "Alex Lee", status: "active", children: [] }
-        ] },
-        { id: "t4-1-4", name: "Isaac", status: "active", children: [] }
-      ] },
-      { id: "t4-2", name: "Saar", status: "inactive", children: [
-        { id: "t4-2-1", name: "Yash Fateh", status: "active", children: [] }
-      ] }
+    "id": "t4",
+    "name": "Calvin Grewal",
+    "status": "inactive",
+    "children": [
+      {
+        "id": "t4-1",
+        "name": "Peter Choi",
+        "status": "bloodline-head",
+        "children": [
+          {
+            "id": "t4-1-1",
+            "name": "Matthew Ho",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t4-1-1-1",
+                "name": "Zachary",
+                "status": "pledge",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t4-1-2",
+            "name": "Hamzah",
+            "status": "active",
+            "children": [
+              {
+                "id": "t4-1-2-1",
+                "name": "Nico",
+                "status": "pledge",
+                "children": []
+              },
+              {
+                "id": "t4-1-2-2",
+                "name": "Madav",
+                "status": "pledge",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t4-1-3",
+            "name": "Joseph",
+            "status": "active",
+            "children": [
+              {
+                "id": "t4-1-3-1",
+                "name": "Matthew P",
+                "status": "pledge",
+                "children": []
+              },
+              {
+                "id": "t4-1-3-2",
+                "name": "Alex Lee",
+                "status": "active",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "t4-1-4",
+            "name": "Isaac",
+            "status": "active",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "t4-2",
+        "name": "Saar",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t4-2-1",
+            "name": "Yash Fateh",
+            "status": "active",
+            "children": []
+          }
+        ]
+      }
     ]
   },
   {
-    id: "t5", name: "Hank", status: "inactive", children: [
-      { id: "t5-1", name: "Jake Weppner", status: "inactive", children: [
-        { id: "t5-1-1", name: "Louis", status: "inactive", children: [
-          { id: "t5-1-1-1", name: "Dillon Leung", status: "inactive", children: [
-            { id: "t5-1-1-1-1", name: "Bond", status: "inactive", children: [] }
-          ] }
-        ] },
-        { id: "t5-1-2", name: "James Park", status: "inactive", children: [
-          { id: "t5-1-2-1", name: "Adriel Lee", status: "inactive", children: [
-            { id: "t5-1-2-1-1", name: "Eric Wang", status: "bloodline-head", children: [
-              { id: "t5-1-2-1-1-1", name: "Ethan Chung", status: "pledge", children: [] },
-              { id: "t5-1-2-1-1-2", name: "Adolfo", status: "pledge", children: [] },
-              { id: "t5-1-2-1-1-3", name: "Fabio Oh", status: "active", children: [
-                { id: "t5-1-2-1-1-3-1", name: "Brendan", status: "pledge", children: [] },
-                { id: "t5-1-2-1-1-3-2", name: "Andrew M", status: "pledge", children: [] }
-              ] }
-            ] },
-            { id: "t5-1-2-1-2", name: "Conor Devlin", status: "active", children: [
-              { id: "t5-1-2-1-2-1", name: "Kaden Pink", status: "active", children: [] }
-            ] },
-            { id: "t5-1-2-1-3", name: "Sebastian", status: "active", children: [
-              { id: "t5-1-2-1-3-1", name: "Emmanuel S", status: "pledge", children: [] }
-            ] }
-          ] }
-        ] }
-      ] },
-      { id: "t5-2", name: "Nick Park", status: "inactive", children: [
-        { id: "t5-2-1", name: "Ankur Singh", status: "inactive", children: [
-          { id: "t5-2-1-1", name: "Ayukt Chaudry", status: "inactive", children: [
-            { id: "t5-2-1-1-1", name: "Amin Shah", status: "active", children: [
-              { id: "t5-2-1-1-1-1", name: "Sid Sharma", status: "active", children: [] },
-              { id: "t5-2-1-1-1-2", name: "Ryan Kim", status: "pledge", children: [] }
-            ] }
-          ] },
-          { id: "t5-2-1-2", name: "Rob Mitu", status: "inactive", children: [
-            { id: "t5-2-1-2-1", name: "Nikhil K", status: "active", children: [
-              { id: "t5-2-1-2-1-1", name: "Luke", status: "active", children: [
-                { id: "t5-2-1-2-1-1-1", name: "Seth H", status: "pledge", children: [] }
-              ] }
-            ] },
-            { id: "t5-2-1-2-2", name: "Paul Clark", status: "inactive", children: [
-              { id: "t5-2-1-2-2-1", name: "Henry G", status: "active", children: [
-                { id: "t5-2-1-2-2-1-1", name: "Chinguun", status: "pledge", children: [] },
-                { id: "t5-2-1-2-2-1-2", name: "Nolyn", status: "pledge", children: [] }
-              ] },
-              { id: "t5-2-1-2-2-2", name: "Parker", status: "active", children: [
-                { id: "t5-2-1-2-2-2-1", name: "Isadore", status: "active", children: [] }
-              ] }
-            ] }
-          ] }
-        ] }
-      ] }
+    "id": "t5",
+    "name": "Hank",
+    "status": "inactive",
+    "children": [
+      {
+        "id": "t5-1",
+        "name": "Jake Weppner",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t5-1-1",
+            "name": "Louis",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t5-1-1-1",
+                "name": "Dillon Leung",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t5-1-1-1-1",
+                    "name": "Bond",
+                    "status": "inactive",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t5-1-2",
+            "name": "James Park",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t5-1-2-1",
+                "name": "Adriel Lee",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t5-1-2-1-1",
+                    "name": "Eric Wang",
+                    "status": "bloodline-head",
+                    "children": [
+                      {
+                        "id": "t5-1-2-1-1-1",
+                        "name": "Ethan Chung",
+                        "status": "pledge",
+                        "children": []
+                      },
+                      {
+                        "id": "t5-1-2-1-1-2",
+                        "name": "Adolfo",
+                        "status": "pledge",
+                        "children": []
+                      },
+                      {
+                        "id": "t5-1-2-1-1-3",
+                        "name": "Fabio Oh",
+                        "status": "active",
+                        "children": [
+                          {
+                            "id": "t5-1-2-1-1-3-1",
+                            "name": "Brendan",
+                            "status": "pledge",
+                            "children": []
+                          },
+                          {
+                            "id": "t5-1-2-1-1-3-2",
+                            "name": "Andrew M",
+                            "status": "pledge",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "t5-1-2-1-2",
+                    "name": "Conor Devlin",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t5-1-2-1-2-1",
+                        "name": "Kaden Pink",
+                        "status": "active",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": "t5-1-2-1-3",
+                    "name": "Sebastian",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t5-1-2-1-3-1",
+                        "name": "Emmanuel S",
+                        "status": "pledge",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t5-2",
+        "name": "Nick Park",
+        "status": "inactive",
+        "children": [
+          {
+            "id": "t5-2-1",
+            "name": "Ankur Singh",
+            "status": "inactive",
+            "children": [
+              {
+                "id": "t5-2-1-1",
+                "name": "Ayukt Chaudry",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t5-2-1-1-1",
+                    "name": "Amin Shah",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t5-2-1-1-1-1",
+                        "name": "Sid Sharma",
+                        "status": "active",
+                        "children": []
+                      },
+                      {
+                        "id": "t5-2-1-1-1-2",
+                        "name": "Ryan Kim",
+                        "status": "pledge",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "t5-2-1-2",
+                "name": "Rob Mitu",
+                "status": "inactive",
+                "children": [
+                  {
+                    "id": "t5-2-1-2-1",
+                    "name": "Nikhil K",
+                    "status": "active",
+                    "children": [
+                      {
+                        "id": "t5-2-1-2-1-1",
+                        "name": "Luke",
+                        "status": "active",
+                        "children": [
+                          {
+                            "id": "t5-2-1-2-1-1-1",
+                            "name": "Seth H",
+                            "status": "pledge",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "t5-2-1-2-2",
+                    "name": "Paul Clark",
+                    "status": "inactive",
+                    "children": [
+                      {
+                        "id": "t5-2-1-2-2-1",
+                        "name": "Henry G",
+                        "status": "active",
+                        "children": [
+                          {
+                            "id": "t5-2-1-2-2-1-1",
+                            "name": "Chinguun",
+                            "status": "pledge",
+                            "children": []
+                          },
+                          {
+                            "id": "t5-2-1-2-2-1-2",
+                            "name": "Nolyn",
+                            "status": "pledge",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "t5-2-1-2-2-2",
+                        "name": "Parker",
+                        "status": "active",
+                        "children": [
+                          {
+                            "id": "t5-2-1-2-2-2-1",
+                            "name": "Isadore",
+                            "status": "active",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
 ];

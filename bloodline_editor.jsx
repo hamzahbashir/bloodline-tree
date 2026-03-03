@@ -455,6 +455,23 @@ function BloodlineEditor() {
     showToast("Exported JSON");
   };
 
+  const copyAsCode = () => {
+    if (!isAdmin) return;
+    const code = `const INITIAL_TREES = ${JSON.stringify(trees, null, 2)};`;
+    navigator.clipboard.writeText(code).then(() => {
+      showToast("Copied code to clipboard — ready to paste!");
+    }).catch(() => {
+      // Fallback for older browsers
+      const textarea = document.createElement("textarea");
+      textarea.value = code;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      showToast("Copied code to clipboard — ready to paste!");
+    });
+  };
+
   const selectedInfo = selected ? findNode(trees, selected) : null;
 
   return (
@@ -504,6 +521,7 @@ function BloodlineEditor() {
         )}
 
         <div style={{ width: 1, height: 22, background: "#d0d4da", margin: "0 4px" }} />
+        {isAdmin && <ToolBtn onClick={copyAsCode} label="Copy as Code" wide accent />}
         <ToolBtn onClick={exportJSON} label="Export JSON" wide />
 
         {/* Admin login area */}

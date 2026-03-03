@@ -727,7 +727,15 @@ const STATUS_LABELS = {
 
 // ─── HELPERS ────────────────────────────────────────────────────────
 let _idCounter = 1000;
-const genId = () => `node-${_idCounter++}`;
+const genId = () => {
+  // Avoid collisions across reloads (critical once exported data contains node-#### ids)
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return `node-${crypto.randomUUID()}`;
+  }
+  const rand = Math.random().toString(36).slice(2, 10);
+  const ts = Date.now().toString(36);
+  return `node-${ts}-${rand}-${_idCounter++}`;
+};
 
 const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -826,11 +834,14 @@ function BloodlineEditor() {
   const laid = deepClone(trees);
   laid.forEach(t => layoutTree(t));
 
-  const rows = [
-    [laid[0], laid[1]],
-    [laid[2], laid[3]],
-    [laid[4]]
-  ];
+  const chunk = (arr, size) => {
+    const out = [];
+    for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+    return out;
+  };
+
+  // 2 trees per row (matches the old 2/2/1 behavior but works for any count)
+  const rows = chunk(laid, 2);
 
   let allNodes = [];
   let allLinks = [];
@@ -842,6 +853,7 @@ function BloodlineEditor() {
     let globalOffsetX = 24;
     let maxH = 0;
     for (const t of row) {
+      if (!t) continue;
       const tNodes = collectNodes(t, []);
       const tLinks = collectLinks(t, []);
       let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
@@ -868,6 +880,10 @@ function BloodlineEditor() {
     svgW = Math.max(svgW, n._rx + NODE_W / 2 + 40);
     svgH = Math.max(svgH, n._ry + NODE_H + 40);
   }
+  if (allNodes.length === 0) {
+    svgW = 800;
+    svgH = 500;
+  }
 
   // ─── ACTIONS ────────────────────────────────────────────────
   const updateTrees = (fn) => {
@@ -885,7 +901,7 @@ function BloodlineEditor() {
 
   const handleNodeClick = (id) => {
     if (editingName) return;
-    setSelected(selected === id ? null : id);
+    setSelected(prev => (prev === id ? null : id));
   };
 
   const handleDoubleClick = (id, currentName) => {

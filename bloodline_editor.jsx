@@ -22,7 +22,7 @@ const INITIAL_TREES = [
             "children": [
               {
                 "id": "t1-1-1-1",
-                "name": "Shloak",
+                "name": "Shloak Chandra",
                 "status": "inactive",
                 "children": [
                   {
@@ -71,7 +71,7 @@ const INITIAL_TREES = [
                       },
                       {
                         "id": "n2",
-                        "name": "Mihail",
+                        "name": "Mihail Dimitrov",
                         "status": "bloodline-head",
                         "children": [
                           {
@@ -402,7 +402,7 @@ const INITIAL_TREES = [
         "children": [
           {
             "id": "t3-3-1",
-            "name": "Shawn H",
+            "name": "Shawn Hussein",
             "status": "inactive",
             "children": [
               {
@@ -573,7 +573,7 @@ const INITIAL_TREES = [
         "children": [
           {
             "id": "t5-1-1",
-            "name": "Louis",
+            "name": "Louis McKinnon",
             "status": "inactive",
             "children": [
               {
@@ -621,7 +621,7 @@ const INITIAL_TREES = [
                       {
                         "id": "t5-1-2-1-1-3",
                         "name": "Fabio Oh",
-                        "status": "active",
+                        "status": "bloodline-head",
                         "children": [
                           {
                             "id": "t5-1-2-1-1-3-1",

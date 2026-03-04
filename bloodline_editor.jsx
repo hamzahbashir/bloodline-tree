@@ -446,7 +446,7 @@ const INITIAL_TREES = [
               },
               {
                 "id": "t3-3-1-2",
-                "name": "Conor",
+                "name": "Conor Reilly",
                 "status": "inactive",
                 "children": [
                   {
@@ -667,7 +667,7 @@ const INITIAL_TREES = [
                       {
                         "id": "t5-1-2-1-2-1",
                         "name": "Kaden Pinkstaff",
-                        "status": "active",
+                        "status": "inactive",
                         "children": []
                       }
                     ]
@@ -735,7 +735,7 @@ const INITIAL_TREES = [
                   {
                     "id": "t5-2-1-2-1",
                     "name": "Nikhil Kulkrani",
-                    "status": "active",
+                    "status": "inactive",
                     "children": [
                       {
                         "id": "t5-2-1-2-1-1",

@@ -425,7 +425,14 @@ const INITIAL_TREES = [
                         "id": "t3-3-1-1-2-1",
                         "name": "Jayden Burton",
                         "status": "active",
-                        "children": []
+                        "children": [
+                          {
+                            "id": "node-463e1f9a-d268-4687-a856-261d58b89d99",
+                            "name": "Sean Oh",
+                            "status": "active",
+                            "children": []
+                          }
+                        ]
                       }
                     ]
                   },
@@ -620,13 +627,27 @@ const INITIAL_TREES = [
                             "id": "t5-1-2-1-1-3-1",
                             "name": "Brendan Zelnis",
                             "status": "active",
-                            "children": []
+                            "children": [
+                              {
+                                "id": "node-5d29c544-a776-44e2-a16f-e80bc670eb98",
+                                "name": "Jameson Chen",
+                                "status": "active",
+                                "children": []
+                              }
+                            ]
                           },
                           {
                             "id": "t5-1-2-1-1-3-2",
                             "name": "Andrew Marks",
                             "status": "active",
-                            "children": []
+                            "children": [
+                              {
+                                "id": "node-c68139db-a965-4caa-957a-0f3400a0c0fc",
+                                "name": "Adiv Enjeti",
+                                "status": "active",
+                                "children": []
+                              }
+                            ]
                           },
                           {
                             "id": "node-86d2643a-bf63-461e-b5ce-2abee9e94747",
@@ -750,6 +771,12 @@ const INITIAL_TREES = [
                                 "name": "???",
                                 "status": "pledge",
                                 "children": []
+                              },
+                              {
+                                "id": "node-37479e80-9586-415e-bf2e-af824d61a745",
+                                "name": "Nathan Uribe",
+                                "status": "active",
+                                "children": []
                               }
                             ]
                           },
@@ -770,7 +797,14 @@ const INITIAL_TREES = [
                             "id": "node-b7b36488-9a6d-47d6-bb21-a9b915739264",
                             "name": "Seth Herron",
                             "status": "active",
-                            "children": []
+                            "children": [
+                              {
+                                "id": "node-c91cd47e-382e-426e-b68d-c76317117c31",
+                                "name": "Ben Winmill",
+                                "status": "active",
+                                "children": []
+                              }
+                            ]
                           }
                         ]
                       },
